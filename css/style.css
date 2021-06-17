@@ -1,0 +1,246 @@
+/* Google Fonts Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700&display=swap');
+
+
+/*==================== VARIABLES====================*/
+:root {
+
+  /*========== Colors ==========*/
+      --orange-color : #F68834;
+      --purple-color : #703A98;
+      --yellow-color : #F5DA00;
+      --text-color : #3f3f3f;
+  
+  /*========== Font SIZE ==========*/
+      --big-font-size:  1.8rem;
+      --normal-font-size: 1.6rem;
+      --small-font-size : 0.8rem;
+      --smaller-font-size : 0.7rem;
+  
+  /*========== Font FACE ==========*/
+  
+      --body-font: 'Poppins', sans-serif;
+  
+  /*========== Font WEIGHT ==========*/
+      --font-light: 100;
+      --font-regular : 200;
+      --font-medium: 400;
+      --font-bold: 500;
+      --font-bolder : 700;
+  
+  }
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--body-font)
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.card {
+  position: relative;
+  max-width: 355px;
+  width: 100%;
+  border-radius: 25px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0px 20px 100px 2px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  overflow: hidden;
+}
+
+.card .card__images{
+  position: relative;
+  height: 210px;
+}
+
+.card .card__images img{
+  position: absolute;
+  height: 175px;
+  object-fit: cover;
+  transform: rotate(18deg);
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 28px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.card .card__images img.active{
+  opacity: 1;
+}
+
+.card__image-bg{
+  position: relative;
+}
+.card__image-bg div{
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #F68834;
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.card__image-bg div.orange.active{
+  background-color: var(--orange-color);
+  opacity: 1;
+}
+.card__image-bg div.purple.active{
+  background-color: var(--purple-color);
+  opacity: 1;
+}
+.card__image-bg div.yellow.active{
+  background-color: var(--yellow-color);
+  opacity: 1;
+}
+
+
+.card__details{
+  text-align: center;
+  margin-top: 15px;
+}
+.card__title{
+  font-size: var(--big-font-size);
+  font-weight: var(--font-bolder);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.card__description{
+  position: relative;
+  height: 20px;
+  
+}
+.card__description p{
+  position: absolute;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  text-align: center;
+  opacity: 0;
+  margin-top: 5px;
+  transition: opacity 0.5s ease;
+}
+.card__description p.active{
+  opacity: 1;
+}
+
+/* Flavours */
+.card__flavours{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+.card__flavours-option{
+  display: flex;
+  align-items: center;
+}
+.card__flavours-title{
+  font-size: var(--small-font-size);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+  margin-right: 8px;
+}
+.card__circles{
+  display: flex;
+}
+.card__circles .circle{
+  height: 18px;
+  width: 18px;
+  background: var(--orange-color);
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.card__circles .circle.orange.active{
+  box-shadow: 0 0 0 2px #fff,
+               0 0 0 4px var(--orange-color);
+}
+.card__circles .circle.purple{
+  background: var(--purple-color);;
+}
+.card__circles .circle.purple.active{
+  box-shadow: 0 0 0 2px #fff,
+               0 0 0 4px var(--purple-color);
+}
+.card__circles .circle.yellow{
+  background: var(--yellow-color);
+}
+.card__circles .circle.yellow.active{
+  box-shadow: 0 0 0 2px #fff,
+               0 0 0 4px var(--yellow-color);
+}
+.card__prices{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card__prices .card__price{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-bold);
+  color: var(--text-color);
+}
+.card__prices .card__price-description{
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-regular);
+  margin-top: -4px;
+  color: var(--text-color);
+}
+
+/* Buttons */
+.card__buttons{
+  position: relative;
+  height: 50px;
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 25px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+
+.card__buttons button{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: var(--small-font-size);
+  letter-spacing: 1px;
+  color: #fff;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+button.orange.active{
+    background-color: var(--orange-color);
+    opacity: 1;
+}
+button.purple.active{
+  background-color:var(--purple-color);
+  opacity: 1;
+}
+button.yellow.active{
+    background-color: var(--yellow-color);
+    opacity: 1;
+}
